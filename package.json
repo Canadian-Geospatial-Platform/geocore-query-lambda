@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": ",.Scirpts/aws-invoke-lambda.sh",
+    "deploy": "./Scripts/aws-zip-and-deploy.sh",
+    "logs": "./Scripts/aws-print-lambda-logs.sh"
   },
   "author": "",
   "license": "ISC",

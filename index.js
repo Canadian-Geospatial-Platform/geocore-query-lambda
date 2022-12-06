@@ -15,6 +15,7 @@ const { query } = require('query-builder.js')
 const athenaExpressConfig = {
     aws: AWS,
     db: "geocore_metadata",
+    formatJson: false,
     getStats: true
 };
 const athenaExpress = new AthenaExpress(athenaExpressConfig);
@@ -24,7 +25,8 @@ exports.handler = async (event) => {
     const sqlQuery = query();
 
     try {
-        let results = await athenaExpress.query(sqlQuery);
+        let queryResults = await athenaExpress.query(sqlQuery);
+        const results = queryResults.Items
         console.log('result is:\n', results)
         return results;
     }

@@ -1,5 +1,5 @@
 const query = function() {
-    return 'SELECT * FROM metadata LIMIT 3'
+    return 'SELECT * FROM v2_25 LIMIT 1'
 }
 
 module.exports = {

@@ -5,13 +5,12 @@ const query = function(keywords) {
 
 // keywordsArray sample: ["Blood in the water", "mountain", "nonce"]
 const whereClause = function(keywordsArray) {
-    let ret = "where "
-    if !keywordsArray return ""
-    let firstElement = true
-    keywordsArray.forEach(e => (e) {
-        if !firstElement ret += 'and'
-        firstElement = false;
+    if (!keywordsArray) return ""
+    let ret = "where"
+    keywordsArray.forEach(e => {
+        ret += ' and ' + e.toLowerCase()
     }    
+)
     return ret
 }
 

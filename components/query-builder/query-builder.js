@@ -7,9 +7,9 @@ const query = function (keywords) {
 };
 
 // keywordsArray sample: ["Blood in the water", "mountain", "nonce"]
-const whereClause = function (keywordsArray) {
-  if (!keywordsArray) return "";
-  let ret = "where regexp_like(properties[1].title.en, '(?i)";
+const whereClause = function (keywordsArray = [], languageCode = "en") {
+  if (!keywordsArray.length) return "";
+  let ret = "where regexp_like(properties[1].title." + languageCode + ", '(?i)";
   let firstItem = true;
   keywordsArray.forEach((e) => {
     if (firstItem) {

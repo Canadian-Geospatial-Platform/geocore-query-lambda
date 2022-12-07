@@ -5,7 +5,7 @@ test("Test shoud run", () => {
 });
 
 test("Empty where clause should be empty string", () => {
-  expect(whereClause()).toBe("");
+  expect(whereClause([])).toBe("");
 });
 
 test("We should receive a valid where request.", () => {

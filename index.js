@@ -21,7 +21,7 @@ const athenaExpressConfig = {
 const athenaExpress = new AthenaExpress(athenaExpressConfig);
 
 exports.handler = async (event) => {
-    console.log("it deploys!")
+    console.log("even is: \n", event)
     const sqlQuery = query();
 
     try {

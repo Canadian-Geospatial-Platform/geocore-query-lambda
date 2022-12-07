@@ -5,7 +5,7 @@
 
 const AthenaExpress = require("athena-express")
 const AWS = require("aws-sdk")
-const { query } = require('query-builder.js')
+const { query } = require('compoents/query-builder/query-builder.js')
 
 /* AWS Credentials are not required here 
     /* Make sure the IAM Execution Role used by this Lambda 

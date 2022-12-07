@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./Scripts/aws-invoke-lambda.sh",
+    "test": "jest --watchAll",
+    "remote-test": "./Scripts/aws-invoke-lambda.sh",
     "deploy": "./Scripts/aws-zip-and-deploy.sh",
     "logs": "./Scripts/aws-print-lambda-logs.sh",
     "dt": "npm run deploy && npm run test"
@@ -13,5 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "athena-express": "^7.1.5"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
   }
 }

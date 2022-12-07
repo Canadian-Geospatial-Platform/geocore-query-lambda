@@ -9,7 +9,7 @@ test("Empty where clause should be empty string", () => {
 });
 
 test("Empty where clause should be empty string", () => {
-  const expectedResult = "where and blood in the water and mountain and nonce";
-  const input = ["Blood in the water", "mountain", "nonce"];
+  const expectedResult = "where blood in the water and mountain and nonce";
+  const input = ["Blood in the water", "mountAin", "nonce"];
   expect(whereClause(input)).toBe(expectedResult);
 });

@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": ",.Scirpts/aws-invoke-lambda.sh",
+    "test": "./Scripts/aws-invoke-lambda.sh",
     "deploy": "./Scripts/aws-zip-and-deploy.sh",
-    "logs": "./Scripts/aws-print-lambda-logs.sh"
+    "logs": "./Scripts/aws-print-lambda-logs.sh",
+    "dt": "npm run deploy && npm run test"
   },
   "author": "",
   "license": "ISC",

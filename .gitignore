@@ -1,3 +1,4 @@
 function.zip
 node_modules/**
 out
+payload.json

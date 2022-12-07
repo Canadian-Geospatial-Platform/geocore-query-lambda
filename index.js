@@ -15,7 +15,7 @@ const { query } = require('query-builder.js')
 const athenaExpressConfig = {
     aws: AWS,
     db: "geocore_metadata",
-    formatJson: false,
+    formatJson: true,
     getStats: true
 };
 const athenaExpress = new AthenaExpress(athenaExpressConfig);

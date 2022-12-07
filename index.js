@@ -5,7 +5,7 @@
 
 const AthenaExpress = require("athena-express");
 const AWS = require("aws-sdk");
-const { query } = require("compoents/query-builder/query-builder.js");
+const { query } = require("components/query-builder/query-builder.js");
 
 /* AWS Credentials are not required here 
     /* Make sure the IAM Execution Role used by this Lambda 
@@ -21,9 +21,9 @@ const athenaExpressConfig = {
 const athenaExpress = new AthenaExpress(athenaExpressConfig);
 
 exports.handler = async (event) => {
-  console.log("even is: \n", event);
-  const sqlQuery = query();
-
+  // console.log("even is: \n", event);
+  const sqlQuery = query([event.queryStringParameters.keyword]);
+  console.log(sqlQuery)
   try {
     let queryResults = await athenaExpress.query(sqlQuery);
     const results = queryResults.Items;

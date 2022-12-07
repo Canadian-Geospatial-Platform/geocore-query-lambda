@@ -1,22 +1,25 @@
 // /geo?north=76.26869465080624&east=-32.69531250000001&south=28.459033019728068&west=-167.34375000000003&keyword=blood native&lang=en&min=1&max=10&theme=economy
 const query = function (keywords) {
-  return "SELECT properties[1].id AS id FROM v2_25 LIMIT 3";
+  let ret = "select properties[1].id as id from v2_25 "
+  ret += whereClause(keywords)
+  ret += " limit 3"
+  return ret;
 };
 
 // keywordsArray sample: ["Blood in the water", "mountain", "nonce"]
 const whereClause = function (keywordsArray) {
   if (!keywordsArray) return "";
-  let ret = "where ";
+  let ret = "where regexp_like(properties[1].title.en, '(?i)";
   let firstItem = true;
   keywordsArray.forEach((e) => {
     if (firstItem) {
       ret += e.toLowerCase();
       firstItem = false
     } else {
-      ret += " and " + e.toLowerCase();
+      ret += "|" + e.toLowerCase();
     }
   });
-  return ret;
+  return ret + "')";
 };
 
 module.exports = {

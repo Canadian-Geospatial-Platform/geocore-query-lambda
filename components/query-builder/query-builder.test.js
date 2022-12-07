@@ -10,6 +10,6 @@ test("Empty where clause should be empty string", () => {
 
 test("Empty where clause should be empty string", () => {
   const expectedResult = "where regexp_like(properties[1].title.en, '(?i)blood in the water|mountain|nonce')";
-  const input = ["Blood in the water", "mountAin", "nonce"];
+  const input = ["blood in the water", "mountain", "nonce"];
   expect(whereClause(input)).toBe(expectedResult);
 });

@@ -13,7 +13,7 @@ const whereClause = function (keywordsArray) {
   let firstItem = true;
   keywordsArray.forEach((e) => {
     if (firstItem) {
-      ret += e.toLowerCase();
+      ret += e;
       firstItem = false
     } else {
       ret += "|" + e.toLowerCase();

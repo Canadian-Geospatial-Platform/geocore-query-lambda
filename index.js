@@ -22,9 +22,9 @@ const athenaExpress = new AthenaExpress(athenaExpressConfig);
 
 exports.handler = async (event) => {
   // console.log("even is: \n", event);
-  const qp = event.queryStringParameters
+  const qp = event.queryStringParameters;
   const sqlQuery = query([qp.keyword], qp.lang);
-  console.log(sqlQuery)
+  console.log(sqlQuery);
   try {
     let queryResults = await athenaExpress.query(sqlQuery);
     const results = queryResults.Items;
